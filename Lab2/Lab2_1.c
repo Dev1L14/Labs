@@ -3,14 +3,14 @@
 
 int* rand_arr(int* arr, int size){
     for (int i=0;i<size;i++){
-        arr[i]=rand();
+        arr[i]=rand()%10000;
     }
     return arr;
 }
 
 void print(int* a, int size){
     for (int i=0;i<size;i++){
-        printf("%d", a[i]);
+        printf("%d ", a[i]);
     }
 }
 
@@ -19,7 +19,7 @@ int main(){
     printf("Input size of arrays: \n");
     printf("Size of 1st = ");
     scanf("%d", &size_arr1);
-    printf("\n Size of 1st = ");
+    printf("Size of 2nd = ");
     scanf("%d", &size_arr2);
     if (size_arr1 <= 0 || size_arr2 < 0){
         printf("\nInput error: impossible size!");
@@ -39,6 +39,10 @@ int main(){
             else res[i]=arr1[i]+arr2[i];
         }
     }
+    print(arr1, size_arr1);
+    printf("\n");
+    print(arr2, size_arr2);
+    printf("\n");
     print(res,size_arr1);
     free(arr1);
     free(arr2);
