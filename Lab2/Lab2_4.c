@@ -22,15 +22,12 @@ double avg_geom(int count, ...)
     double res = 1.0;
     va_list iter;
     va_start(iter, count);
-
     for (int i = 0; i < count; i++) {
         res *= va_arg(iter, double);
     }
-
     va_end(iter);
 
-    if (count % 2 == 0 && res < 0.0)
-        return NAN;
+    if (count % 2 == 0 && res < 0.0) return NAN;
     return pow(res, 1.0 / count);
 }
 
