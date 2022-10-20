@@ -17,7 +17,7 @@ int new_arr(int* arr, int* res, int size){
     res[0] = *arr;
     for (int i = 1; i < size; i++){
         int flag = 0;
-        for(int j = 1; j < size_new; j++){
+        for(int j = 0; j < size_new; j++){
             if(arr[i] == res[j]){
                 flag = 1;
                 break;
